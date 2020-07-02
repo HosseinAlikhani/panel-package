@@ -23,9 +23,9 @@ class PanelRouteRegister
     public function all()
     {
         $this->router->group(
-            ['prefix'   =>  'panel', 'middleware'    =>  []],
+            ['prefix'   =>  'panel', 'middleware'    =>  ['auth']],
             function($router) {
-                $router->get('', 'PanelController@getPanel')->name('get.panel')->middleware(['role:super-admin']);
+                $router->get('', 'PanelController@getPanel')->name('panel');
             }
         );
     }
