@@ -1,7 +1,7 @@
 {
-  "name": "dcr/auth",
-  "description": "simple authentication",
-  "keywords": ["D3CR33", "Authentication"],
+  "name": "dcr/panel",
+  "description": "simple panel dashboard",
+  "keywords": ["D3CR33", "panel", "dashboard"],
   "type": "package",
   "license": "MIT",
   "authors": [{
@@ -14,13 +14,13 @@
   "require-dev": {},
   "autoload": {
     "psr-4": {
-      "D3CR33\\Auth\\": "src/"
+      "D3CR33\\Panel\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "D3CR33\\Auth\\Provider\\AuthServiceProvider"
+        "D3CR33\\Auth\\Provider\\PanelServiceProvider"
       ]
     }
   },
