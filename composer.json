@@ -9,7 +9,8 @@
     "email": "poshtiban.esteam@gmail.com"
   }],
   "require": {
-    "php": ">=7.0"
+    "php": ">=7.0",
+    "spatie/laravel-permission": "^2.37"
   },
   "require-dev": {},
   "autoload": {
