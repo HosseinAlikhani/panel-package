@@ -20,7 +20,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "D3CR33\\Auth\\Provider\\PanelServiceProvider"
+        "D3CR33\\Panel\\Provider\\PanelServiceProvider"
       ]
     }
   },
