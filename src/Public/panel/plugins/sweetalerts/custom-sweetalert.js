@@ -16,6 +16,16 @@ $('.widget-content .success').on('click', function () {
 
 })
 
+$('.widget-content .error').on('click', function () {
+  swal({
+    title: 'U are Fail!',
+    text: "You clicked the!",
+    type: 'error',
+    padding: '2em'
+  })
+
+})
+
 $('.widget-content .html-jquery').on('click', function () {
   swal({
     title: 'Custom animation with Animate.css',
