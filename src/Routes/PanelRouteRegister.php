@@ -26,14 +26,9 @@ class PanelRouteRegister
             ['prefix'   =>  'panel'],
             function($router) {
                 $router->get('', 'PanelController@getPanel')->name('panel');
-            }
-        );
-        $this->router->group(
-            ['prefix'   =>  'profile'],
-            function($router){
-                $router->get('', 'ProfileController@getProfile')->name('profile');
-                $router->get('setting', 'ProfileController@getSetting')->name('profile-setting');
-                $router->post('setting', 'ProfileController@postSetting')->name('post.setting');
+                $router->get('profile', 'PanelController@getProfile')->name('profile');
+                $router->get('setting', 'PanelController@getSetting')->name('profile-setting');
+                $router->post('setting', 'PanelController@postSetting')->name('post.setting');
             }
         );
     }
