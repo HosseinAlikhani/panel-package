@@ -25,4 +25,22 @@ return [
     'workExperience'    =>  'Work Experience',
     'Skills'    =>  'Skills',
     'Bio'   =>  'Bio',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    'message'   =>  [
+        'updateok'  =>  'Your information has been successfully updated',
+        'updateno'  =>  'We have encountered an error in updating your information'
+    ]
 ];
