@@ -23,9 +23,17 @@ class PanelRouteRegister
     public function all()
     {
         $this->router->group(
-            ['prefix'   =>  'panel', 'middleware'    =>  ['auth']],
+            ['prefix'   =>  'panel'],
             function($router) {
                 $router->get('', 'PanelController@getPanel')->name('panel');
+            }
+        );
+        $this->router->group(
+            ['prefix'   =>  'profile'],
+            function($router){
+                $router->get('', 'ProfileController@getProfile')->name('profile');
+                $router->get('setting', 'ProfileController@getSetting')->name('profile-setting');
+                $router->post('setting', 'ProfileController@postSetting')->name('post.setting');
             }
         );
     }
