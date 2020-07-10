@@ -13,6 +13,8 @@ class PanelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__ . '/Resources', 'Panel');
+        $this->loadTranslationsFrom(__DIR__ . '/Lang','Panel-Lang');
+
         $this->loadMigrationsFrom(__DIR__ . '/Database/Migrations');
         $this->publishes([
             __DIR__ . '/Public'    =>  public_path('src'),
