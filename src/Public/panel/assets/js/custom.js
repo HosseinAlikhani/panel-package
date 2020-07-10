@@ -132,3 +132,4 @@ function GetIEVersion() {
   else
     return 0; //It is not IE
 }
+
