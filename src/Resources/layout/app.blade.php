@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title> Dashboard -  {{ env('APP_NAME') }}</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('/src/panel/assets/img/favicon.ico') }}"/>
     <link href="{{ asset('/src/panel/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
@@ -44,7 +45,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search toggle-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <form class="form-inline search-full form-inline search" role="search">
                         <div class="search-bar">
-                            <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="Search...">
+                            <input type="text" class="form-control search-form-control  ml-lg-auto" placeholder="{{ __('Panel-Lang::trans.search') }}">
                         </div>
                     </form>
                 </li>
@@ -53,13 +54,11 @@
             <ul class="navbar-item flex-row navbar-dropdown">
                 <li class="nav-item dropdown language-dropdown more-dropdown">
                     <div class="dropdown  custom-dropdown-icon">
-                        <a class="dropdown-toggle btn" href="#" role="button" id="langDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/img/ca.png" class="flag-width" alt="flag"><span>English</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                        <a class="dropdown-toggle btn" href="#" role="button" id="langDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('/src/panel/assets/img/IR.png') }}" class="flag-width" alt="flag"><span>Iran</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
 
                         <div class="dropdown-menu dropdown-menu-right animated fadeInUp" aria-labelledby="langDropdown">
-                            <a class="dropdown-item" data-img-value="de" data-value="German" href="javascript:void(0);"><img src="/src/panel/assets/img/de.png" class="flag-width" alt="flag"> German</a>
-                            <a class="dropdown-item" data-img-value="jp" data-value="Japanese" href="javascript:void(0);"><img src="/src/panel/assets/img/jp.png" class="flag-width" alt="flag"> Japanese</a>
-                            <a class="dropdown-item" data-img-value="fr" data-value="French" href="javascript:void(0);"><img src="/src/panel/assets/img/fr.png" class="flag-width" alt="flag"> French</a>
-                            <a class="dropdown-item" data-img-value="ca" data-value="English" href="javascript:void(0);"><img src="/src/panel/assets/img/ca.png" class="flag-width" alt="flag"> English</a>
+                            <a class="dropdown-item" data-img-value="de" data-value="German" href="javascript:void(0);"><img src="{{ asset('/src/panel/assets/img/IR.png') }}" class="flag-width" alt="flag"> Iran </a>
+                            <a class="dropdown-item" data-img-value="de" data-value="German" href="javascript:void(0);"><img src="{{ asset('/src/panel/assets/img/ca.png') }}" class="flag-width" alt="flag"> English </a>
                         </div>
                     </div>
                 </li>
@@ -194,7 +193,7 @@
                     <div class="dropdown-menu position-absolute animated fadeInUp" aria-labelledby="userProfileDropdown">
                         <div class="user-profile-section">
                             <div class="media mx-auto">
-                                <img src="/src/panel/assets/img/boy.png" class="img-fluid mr-2" alt="avatar">
+                                <img src="{{ asset('/src/panel/assets/img/boy.png') }}" class="img-fluid mr-2" alt="avatar">
                                 <div class="media-body">
 
                                     <h5>{{ Auth::user()->fname}} {{ Auth::user()->lname }}</h5>
@@ -202,23 +201,13 @@
                             </div>
                         </div>
                         <div class="dropdown-item">
-                            <a href="user_profile.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <span>My Profile</span>
+                            <a href="{{ route('profile') }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> <span>{{ __('Panel-Lang::trans.MyProfile') }}</span>
                             </a>
                         </div>
                         <div class="dropdown-item">
-                            <a href="apps_mailbox.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg> <span>My Inbox</span>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="auth_lockscreen.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> <span>Lock Screen</span>
-                            </a>
-                        </div>
-                        <div class="dropdown-item">
-                            <a href="auth_login.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span>Log Out</span>
+                            <a href="{{ route('logout') }}">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg> <span> {{ __('Panel-Lang::trans.LogOut') }}</span>
                             </a>
                         </div>
                     </div>
@@ -241,7 +230,7 @@
                 <div class="profile-info">
                     <figure class="user-cover-image"></figure>
                     <div class="user-info">
-                        <img src="/src/panel/assets/img/boy.png" alt="avatar">
+                        <img src="{{ asset('/src/panel/assets/img/boy.png') }}" alt="avatar">
                         <h6 class="">{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h6>
                     </div>
                 </div>
@@ -251,7 +240,7 @@
                         <a href="#dashboard" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                                <span>Dashboard</span>
+                                <span>{{ __('Panel-Lang::trans.Dashboard') }}</span>
                             </div>
                         </a>
                     </li>
@@ -362,11 +351,17 @@
     $(document).ready(function() {
         App.init();
     });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
 </script>
 <script src="{{ asset('/src/panel/assets/js/custom.js') }}"></script>
 
 <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
     @yield('script')
+    <script src="{{ asset('/src/panel/assets/js/toast.js') }}"></script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 @extends('Panel::layout.app')
 @section('css')
-    <link href="/src/panel/plugins/apex/apexcharts.css" rel="stylesheet" type="text/css">
-    <link href="/src/panel/assets/css/dashboard/dash_2.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('/src/panel/plugins/apex/apexcharts.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/src/panel/assets/css/dashboard/dash_2.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')
 
@@ -247,6 +247,6 @@
 
 @endsection
 @section('script')
-    <script src="/src/panel/plugins/apex/apexcharts.min.js"></script>
-    <script src="/src/panel/assets/js/dashboard/dash_1.js"></script>
+    <script src="{{ asset('/src/panel/plugins/apex/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('/src/panel/assets/js/dashboard/dash_1.js') }}"></script>
 @endsection
