@@ -25,7 +25,7 @@ class Panel
         $defaultOptions = [
             'namespace' =>  '\D3CR33\Panel\Http\Controllers',
             'prefix'    =>  '',
-            'middleware'    =>  ['web']
+            'middleware'    =>  ['web', 'auth']
         ];
 
         $options = array_merge($defaultOptions, $options);
