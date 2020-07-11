@@ -63,6 +63,6 @@ class BaseEntity extends BaseController
      */
     public function delete($param)
     {
-        $this->model->delete($param);
+        return $this->model->destroy($param);
     }
 }
