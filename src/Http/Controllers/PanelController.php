@@ -54,42 +54,8 @@ class PanelController extends BaseEntity
      */
     public function postSetting()
     {
-        if ($this->validator()->fails())
-            return response($this->validator()->errors()->first(), 422);
-
-        return $this->Usercontroller()->update(Auth::id(),$this->variable()) ?
-            response(__('Panel-Lang::trans.message.updateok'), 200) :
-            response(__('Panel-Lang::trans.message.updateno'), 500);
+        return app(UserController::class,$this->request->all())->postUser(Auth::id());
     }
 
-    /**
-     * @return array
-     */
-    public function variable()
-    {
-        return [
-            'fname' =>  $this->request->fname,
-            'lname' =>  $this->request->lname,
-            'email' =>  $this->request->email
-        ];
-    }
 
-    /**
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    public function validator()
-    {
-        foreach (array_keys($this->variable()) as $key)
-            $rule[$key] = 'required';
-        return Validator::make($this->request->all(), $rule, $this->message());
-    }
-
-    /**
-     * @return array
-     */
-    public function message()
-    {
-        return [
-            'required'  =>  __('Auth-Lang::validation.required'),
-        ];
-    }}
+}
