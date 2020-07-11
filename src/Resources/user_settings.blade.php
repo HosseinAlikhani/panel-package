@@ -658,6 +658,7 @@ My job is to build your website so that it is functional and user-friendly but a
     <script src="{{ asset('/src/panel/plugins/blockui/jquery.blockUI.min.js') }}"></script>
     <!-- <script src="plugins/tagInput/tags-input.js"></script> -->
     <script src="{{ asset('/src/panel/assets/js/users/account-settings.js') }}"></script>
+    <script src="{{ asset('/src/panel/assets/js/users/account-update.js') }}"></script>
     <script>
 
     </script>
