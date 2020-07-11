@@ -29,6 +29,16 @@ class PanelRouteRegister
                 $router->get('profile', 'PanelController@getProfile')->name('profile');
                 $router->get('setting', 'PanelController@getSetting')->name('profile-setting');
                 $router->post('setting', 'PanelController@postSetting')->name('post.setting');
+
+                $router->group(
+                    ['prefix'   =>  'user'],
+                    function($router) {
+                        $router->get('', 'UserController@getUsers')->name('get.users');
+                        $router->get('{id}', 'UserController@getUser')->name('get.user');
+                        $router->post('{id}', 'UserController@postUser')->name('update.user');
+                        $router->delete('{id}', 'UserController@deleteUser')->name('delete.user');
+                    }
+                );
             }
         );
     }
