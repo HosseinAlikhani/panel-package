@@ -33,9 +33,11 @@ class PanelRouteRegister
                 $router->group(
                     ['prefix'   =>  'user'],
                     function($router) {
+                        $router->get('create', 'UserController@getPostUser')->name('get.post.user');
                         $router->get('', 'UserController@getUsers')->name('get.users');
                         $router->get('{id}', 'UserController@getUser')->name('get.user');
-                        $router->post('{id}', 'UserController@postUser')->name('update.user');
+                        $router->post('{id}', 'UserController@patchUser')->name('update.user');
+                        $router->post('', 'UserController@postUser')->name('post.user');
                         $router->delete('{id}', 'UserController@deleteUser')->name('delete.user');
                     }
                 );
