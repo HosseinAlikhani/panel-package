@@ -261,11 +261,10 @@
                         </a>
                         <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
                             <li>
-                                <a href="{{ route('get.users') }}"> {{ __('Panel-Lang::trans.View') }} </a>
+                                <a href="{{ route('get.post.user') }}"> {{ __('Panel-Lang::trans.Create') }} </a>
                             </li>
                             <li>
-                                <a href="component_tabs.html"> {{ __('Panel-Lang::trans.Create') }} </a>
-                            </li>
+                                <a href="{{ route('get.users') }}"> {{ __('Panel-Lang::trans.View') }} </a>
                             </li>
                         </ul>
                     </li>
