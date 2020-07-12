@@ -53,5 +53,7 @@ return [
         'updateno'  =>  'We have encountered an error in updating your information',
         'deleteok'  =>  'Your information has been successfully deleted',
         'deleteno'  =>  'We have encountered an error deleting your information',
+        'createok'  =>  'Your information has been successfully recorded',
+        'createno'  =>  'We have made a mistake in recording your information',
     ]
 ];
