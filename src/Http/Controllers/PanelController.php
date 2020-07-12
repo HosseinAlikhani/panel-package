@@ -54,7 +54,7 @@ class PanelController extends BaseEntity
      */
     public function postSetting()
     {
-        return app(UserController::class,$this->request->all())->postUser(Auth::id());
+        return app(UserController::class,$this->request->all())->patchUser(Auth::id());
     }
 
 
