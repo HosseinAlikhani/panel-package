@@ -32,7 +32,7 @@ class UserController extends BaseEntity
      */
     public function getUsers()
     {
-        $users = $this->users();
+        $users = $this->findAll();
 
         return view('Panel::user.list', compact(['users']));
     }
@@ -105,20 +105,6 @@ class UserController extends BaseEntity
         return $this->delete($id) ?
             response(__('Panel-Lang::trans.message.deleteok'), 200) :
             response(__('Panel-Lang::trans.message.deleteno'), 500);
-    }
-
-    /**
-     * return all users
-     * @return mixed
-     */
-    public function users()
-    {
-        return $this->findAll();
-    }
-
-    public function user()
-    {
-
     }
 
     /**
