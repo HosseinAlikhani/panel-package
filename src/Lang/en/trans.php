@@ -6,7 +6,8 @@ return [
     'Dashboard' =>  'Dashboard',
     'UserInterface' =>  'User Interface',
     'User'  =>  'Users',
-    'Role'  =>  'Role - Permission',
+    'Role'  =>  'Role',
+    'Permission'    =>  'Permission',
     'GeneralInformation'    =>  'General Information',
     'UploadPicture' =>  'Upload Picture',
     'FirstName' =>  'First Name',
@@ -35,7 +36,11 @@ return [
     'State' =>  'State',
     'Online'    =>  'Online',
     'Offline'   =>  'Offline',
-
+    'RoleName'  =>  'Role Name',
+    'PermissionName'    =>  'Permission Name',
+    'GuardName' =>  'Guard Name',
+    'Choose'    =>  'Choose',
+    'Assumption'    =>  'Assumption',
 
 
 

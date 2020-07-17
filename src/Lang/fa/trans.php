@@ -6,7 +6,8 @@ return [
     'Dashboard' =>  'داشبورد',
     'UserInterface' =>  'تنظیمات کاربری',
     'User'  =>  'کاربران',
-    'Role'  =>  'سطح دسترسی',
+    'Role'  =>  'نقش',
+    'Permission'    =>  'سطح دسترسی',
     'GeneralInformation'    =>  'اطلاعات کلی',
     'UploadPicture' =>  'آپلود عکس',
     'FirstName' =>  'نام',
@@ -35,9 +36,11 @@ return [
     'State' =>  'وضعیت',
     'Online'    =>  'آنلاین',
     'Offline'   =>  'آفلاین',
-
-
-
+    'RoleName'  =>  'نام نقش کاربری',
+    'PermissionName'    =>  'نام سطح دسترسی',
+    'GuardName' =>  'نام گارد',
+    'Choose'    =>  'انتخاب کنید',
+    'Assumption'    =>  'پیش فرض',
 
 
 
