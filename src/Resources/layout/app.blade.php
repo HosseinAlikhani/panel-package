@@ -250,16 +250,16 @@
                     </li>
 
                     <li class="menu">
-                        <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <a href="#user-menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 23 23" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                                 <span> {{ __('Panel-Lang::trans.User') }} </span>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                             </div>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
+                        <ul class="collapse submenu list-unstyled" id="user-menu" data-parent="#accordionExample">
                             <li>
                                 <a href="{{ route('get.post.user') }}"> {{ __('Panel-Lang::trans.Create') }} </a>
                             </li>
@@ -270,22 +270,28 @@
                     </li>
 
                     <li class="menu">
-                        <a href="#components" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <a href="#role-menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                                <span> {{ __('Panel-Lang::trans.Role') }} </span>
+                                <span> {{ __('Panel-Lang::trans.Role') }} - {{ __('Panel-Lang::trans.Permission') }}</span>
                             </div>
                             <div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
                             </div>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="components" data-parent="#accordionExample">
+                        <ul class="collapse submenu list-unstyled" id="role-menu" data-parent="#accordionExample">
                             <li>
-                                <a href="component_tabs.html"> {{ __('Panel-Lang::trans.View') }} </a>
+                                <a href="{{ route('get.post.role') }}"> {{ __('Panel-Lang::trans.Create') }}  {{ __('Panel-Lang::trans.Role') }}</a>
                             </li>
                             <li>
-                                <a href="component_tabs.html"> {{ __('Panel-Lang::trans.Create') }} </a>
+                                <a href="{{ route('get.roles') }}"> {{ __('Panel-Lang::trans.View') }}  {{ __('Panel-Lang::trans.Role') }}</a>
                             </li>
+
+                            <li>
+                                <a href="{{ route('get.post.permission') }}"> {{ __('Panel-Lang::trans.Create') }}  {{ __('Panel-Lang::trans.Permission') }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('get.permissions') }}"> {{ __('Panel-Lang::trans.View') }}  {{ __('Panel-Lang::trans.Permission') }}</a>
                             </li>
                         </ul>
                     </li>
