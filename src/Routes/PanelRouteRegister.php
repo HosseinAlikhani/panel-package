@@ -41,6 +41,33 @@ class PanelRouteRegister
                         $router->delete('{id}', 'UserController@deleteUser')->name('delete.user');
                     }
                 );
+
+                $router->group(
+                    ['prefix'   =>  'role'],
+                    function($router) {
+                        $router->get('create', 'RoleController@getPostRole')->name('get.post.role');
+                        $router->get('', 'RoleController@getRoles')->name('get.roles');
+                        $router->get('{id}', 'RoleController@getRole')->name('get.role');
+
+                        $router->post('', 'RoleController@postRole')->name('post.role');
+                        $router->patch('{id}', 'RoleController@patchRole')->name('patch.role');
+                        $router->delete('{id}', 'RoleController@deleteRole')->name('delete.role');
+                    }
+                );
+
+                $router->group(
+                    ['prefix'   =>  'permission'],
+                    function($router) {
+                        $router->get('create', 'PermissionController@getPostPermission')->name('get.post.permission');
+                        $router->get('all', 'PermissionController@getAllPermissions')->name('get.all.permissions');
+                        $router->get('', 'PermissionController@getPermissions')->name('get.permissions');
+                        $router->get('{id}', 'PermissionController@getPermission')->name('get.permission');
+
+                        $router->post('', 'PermissionController@postPermission')->name('post.permission');
+                        $router->patch('{id}', 'PermissionController@patchPermission')->name('patch.permission');
+                        $router->delete('{id}', 'PermissionController@deletePermission')->name('delete.permission');
+                    }
+                );
             }
         );
     }
