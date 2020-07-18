@@ -33,7 +33,7 @@ class PermissionController extends BaseEntity
     public function getPermission($id)
     {
         $role = $this->findOne($id);
-        return view('Panel::role.update', compact(['role']));
+        return view('Panel::permission.update', compact(['role']));
     }
 
     public function getPostPermission()
