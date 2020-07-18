@@ -25,6 +25,11 @@ class RoleController extends BaseEntity
         return view('Panel::role.list', compact(['roles']));
     }
 
+    public function getAllRoles()
+    {
+        return $this->findAll();
+    }
+
     public function getRole($id)
     {
         $role = $this->findOne($id);
