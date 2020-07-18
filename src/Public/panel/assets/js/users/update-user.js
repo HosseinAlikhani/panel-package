@@ -4,7 +4,12 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         var formdata = $(".general-info").serializeArray();
         var url = $(".general-info").attr('action');
-        console.log(url);
+        var role = {
+            'name': 'role',
+            'value': $("#role").val(),
+        };
+        console.log(role);
+        formdata.push(role);
         $.ajax({
             url: url,
             type: "POST",
