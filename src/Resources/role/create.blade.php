@@ -9,10 +9,6 @@
 {{--    select2--}}
     <link href="{{ asset('/src/panel/assets/css/scrollspyNav.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('/src/panel/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css" >
-
-    <script>
-        var getPermission  = "{{ route('get.all.permissions') }}"
-    </script>
 @endsection
 @section('content')
     <div class="layout-px-spacing">
@@ -94,7 +90,7 @@
             tags: true
         });
 
-        $.get( getPermission , function(data, status){
+        $.get( get_all_permission , function(data, status){
             $.map( data, function( n ) {
                 var option = new Option(n.name, n.id);
                 $('#permission').append( '<option value="'+n.name+'">'+n.name+'</option>' );
