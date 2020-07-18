@@ -46,6 +46,7 @@ class PanelRouteRegister
                     ['prefix'   =>  'role'],
                     function($router) {
                         $router->get('create', 'RoleController@getPostRole')->name('get.post.role');
+                        $router->get('all', 'RoleController@getAllRoles')->name('get.all.roles');
                         $router->get('', 'RoleController@getRoles')->name('get.roles');
                         $router->get('{id}', 'RoleController@getRole')->name('get.role');
 
