@@ -35,7 +35,11 @@
                                 </td>
                                 <td>{{ $user->lname }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td> user </td>
+                                <td>
+                                    @foreach($user->getRoleNames() as $role)
+                                        <span class="badge badge-pill">{{ $role }}</span>
+                                    @endforeach
+                                </td>
                                 <td>
                                     <div class="t-dot bg-success" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('Panel-Lang::trans.Online') }}"></div>
                                 </td>
