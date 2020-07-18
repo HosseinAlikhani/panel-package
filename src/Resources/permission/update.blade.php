@@ -14,7 +14,7 @@
                 <div class="scrollspy-example" data-spy="scroll" data-target="#account-settings-scroll" data-offset="-100">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 layout-spacing">
-                            <form name="role" class="section role" method="PATCH" action="{{ route('patch.role', $role->id) }}">
+                            <form name="form" class="section role" method="PATCH" action="{{ route('patch.permission', $role->id) }}">
                                 @csrf
                                 <div class="info">
                                     <div class="row">
@@ -49,7 +49,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12 m-5  mt-0">
-                                            <button type="button" id="role" class="btn btn-success"> {{ __('Panel-Lang::trans.Create') }} </button>
+                                            <button type="button" id="form-submit" class="btn btn-success"> {{ __('Panel-Lang::trans.Create') }} </button>
 
                                         </div>
                                     </div>
