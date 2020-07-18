@@ -9,6 +9,10 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('/src/panel/assets/img/favicon.ico') }}"/>
     <link href="{{ asset('/src/panel/assets/css/loader.css') }}" rel="stylesheet" type="text/css" />
     <script src="{{ asset('/src/panel/assets/js/loader.js') }}"></script>
+    <script>
+        var get_all_permission  = "{{ route('get.all.permissions') }}";
+        var get_all_role = "{{ route('get.all.roles') }}";
+    </script>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="{{ asset('/src/panel/fonts.googleapis.com/cssa1f9.css?family=Quicksand:400,500,600,700&amp;display=swap') }}" rel="stylesheet">
     <link href="{{ asset('/src/panel/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -295,7 +299,6 @@
                             </li>
                         </ul>
                     </li>
-
                     <li class="menu">
                         <a href="widgets.html" aria-expanded="false" class="dropdown-toggle">
                             <div class="">
