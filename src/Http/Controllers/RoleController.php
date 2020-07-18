@@ -52,10 +52,9 @@ class RoleController extends BaseEntity
         if ($role) {
             $this->givePermissionTo($role->id);
             return response(__('Panel-Lang::trans.message.createok'), 200);
+        }else{
+            return response(__('Panel-Lang::trans.message.createno'), 500);
         }
-        return $role  ?
-             :
-            response(__('Panel-Lang::trans.message.createno'), 500);
     }
 
     public function patchRole($id)
