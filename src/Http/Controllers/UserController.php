@@ -33,7 +33,6 @@ class UserController extends BaseEntity
     public function getUsers()
     {
         $users = $this->findAll();
-
         return view('Panel::user.list', compact(['users']));
     }
 
@@ -70,9 +69,13 @@ class UserController extends BaseEntity
             return response($this->validator($this->postvariable())->errors()->first(), 422);
         }
 
-        return $this->create() ?
-            response(__('Panel-Lang::trans.message.createok'), 200) :
-            response(__('Panel-Lang::trans.message.createno'), 500);
+        $user = $this->create();
+        if ($user){
+            $this->assignRole($user->id);
+            return response(__('Panel-Lang::trans.message.createok'), 200);
+        }else{
+            return response(__('Panel-Lang::trans.message.createno'), 500);
+        }
     }
 
     /**
@@ -87,7 +90,7 @@ class UserController extends BaseEntity
         if ($this->validator($this->patchVariable())->fails()) {
             return response($this->validator($this->patchVariable())->errors()->first(), 422);
         }
-
+        $this->assignRole($id);
         return $this->update($id) ?
             response(__('Panel-Lang::trans.message.updateok'), 200) :
             response(__('Panel-Lang::trans.message.updateno'), 500);
@@ -195,5 +198,15 @@ class UserController extends BaseEntity
             'email'    => __('Auth-Lang::validation.attributes.email'),
             'password' => __('Auth-Lang::validation.attributes.password'),
         ];
+    }
+
+    public function explodeRole()
+    {
+        return explode(',',$this->request->role);
+    }
+
+    public function assignRole($userid)
+    {
+        return $this->findOne($userid)->syncRoles($this->explodeRole());
     }
 }
